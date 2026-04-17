@@ -61,6 +61,30 @@ if (command === "route") {
     console.error("❌ Failed to create route:", error.message);
     process.exit(1);
   }
+} else if (command === "init") {
+  const pkgPath = path.resolve(process.cwd(), "package.json");
+
+  try {
+    if (!fs.existsSync(pkgPath)) {
+      console.error("❌ Error: No package.json found in this directory.");
+      process.exit(1);
+    }
+
+    const pkgData = fs.readFileSync(pkgPath, "utf-8");
+    const pkg = JSON.parse(pkgData);
+
+    pkg.scripts = pkg.scripts || {};
+
+    pkg.scripts["make:route"] = "svelte-maker route";
+
+    fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
+
+    console.log("✅ Success! Added 'make:route' alias to your package.json.");
+    console.log("💡 You can now run: npm run make:route <path>");
+  } catch (error) {
+    console.error("❌ Failed to update package.json:", error.message);
+    process.exit(1);
+  }
 } else {
   console.log("Unknown command. Available commands: route");
 }
