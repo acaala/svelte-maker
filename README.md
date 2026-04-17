@@ -1,6 +1,6 @@
 # Svelte Maker ⚡️
 
-A lightning-fast, Laravel Artisan-style CLI tool for generating SvelteKit routes, configs, and server files from the terminal. 
+A lightning-fast, Symfony Artisan-style CLI tool for generating SvelteKit routes, configs, and server files from the terminal. 
 
 Stop manually creating deeply nested folders and boilerplate files. Let Svelte Maker do it for you.
 
@@ -8,14 +8,14 @@ Stop manually creating deeply nested folders and boilerplate files. Let Svelte M
 
 Currently, Svelte Maker is available directly via GitHub.
 
-**Global Install (Recommended):**
+**Global Install:**
 ```bash
-npm install -g github:YourUsername/svelte-maker
+npm install -g github:acaala/svelte-maker
 ```
 
 **Local Project Install:**
 ```bash
-npm install -D github:YourUsername/svelte-maker
+npm install -D github:acaala/svelte-maker
 ```
 
 ---
@@ -30,6 +30,15 @@ npx svelte-maker <command> [arguments] [flags]
 
 ### Commands
 
+#### `init` (Optional Setup)
+Initializes Svelte Maker in your project by safely injecting a `make:route` alias into your `package.json` scripts. This allows you to use the familiar Laravel/Symfony syntax for all future commands.
+
+**Syntax:**
+```bash
+npx svelte-maker init
+```
+*After running `init`, you can simply run: `npm run make:route <path>`*
+
 #### `route`
 Generates a new route directory along with its corresponding SvelteKit files (`+page.svelte`, `+page.ts`, and `+page.server.ts`).
 
@@ -37,6 +46,7 @@ Generates a new route directory along with its corresponding SvelteKit files (`+
 ```bash
 npx svelte-maker route <path> [routeName] [options]
 ```
+*(Or `npm run make:route <path> [routeName] [options]` if initialized)*
 
 **Arguments:**
 * `<path>` *(Required)*: The directory path inside `src/routes/` where the files should be created. Supports deep nesting (e.g., `admin/users/[id]`).
