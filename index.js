@@ -75,7 +75,7 @@ if (command === "route") {
 
     pkg.scripts = pkg.scripts || {};
 
-    pkg.scripts["make:route"] = "svelte-maker route";
+    pkg.scripts["make:route"] = "npx svelte-maker route";
 
     fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + "\n");
 
