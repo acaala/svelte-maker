@@ -1,4 +1,4 @@
-# Svelte Maker ⚡️
+# Svelte Maker
 
 A lightning-fast, Symfony Maker style CLI tool for generating SvelteKit routes, configs, and server files from the terminal. 
 
