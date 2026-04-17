@@ -1,17 +1,10 @@
 # Svelte Maker ⚡️
 
-A lightning-fast, Symfony Artisan-style CLI tool for generating SvelteKit routes, configs, and server files from the terminal. 
-
-Stop manually creating deeply nested folders and boilerplate files. Let Svelte Maker do it for you.
+A lightning-fast, Symfony Maker style CLI tool for generating SvelteKit routes, configs, and server files from the terminal. 
 
 ## Installation
 
 Currently, Svelte Maker is available directly via GitHub.
-
-**Global Install:**
-```bash
-npm install -g github:acaala/svelte-maker
-```
 
 **Local Project Install:**
 ```bash
